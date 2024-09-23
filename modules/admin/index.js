@@ -9,6 +9,7 @@ const {
   handleUpdatePrices,
   createUpdatePricesModal,
 } = require("./functions/updatePrices");
+const { sendCustomMessage } = require("./functions/sendMessage");
 
 module.exports = {
   init: (client) => {
@@ -33,6 +34,17 @@ module.exports = {
         await handleUpdatePrices(interaction);
       },
     });
+    // Enviar un mensaje personalizado
+    client.buttons.set("send_welcome_message", {
+      execute: async (interaction) => {
+        const welcomeChannelId = "727579109529616452";
+        await sendCustomMessage(client, welcomeChannelId);
+        await interaction.reply({
+          content: "Mensaje de bienvenida enviado con éxito!",
+          ephemeral: true,
+        });
+      },
+    });
   },
 };
 
@@ -47,8 +59,13 @@ async function sendAdminPanel(channel) {
   const row = new ActionRowBuilder().addComponents(
     new ButtonBuilder()
       .setCustomId("update_prices")
-      .setLabel("Actualizar Precios")
-      .setStyle(ButtonStyle.Success)
+      .setLabel("Actualizar Precios♻️")
+      .setStyle(ButtonStyle.Success),
+    // Añade este nuevo botón
+    new ButtonBuilder()
+      .setCustomId("send_welcome_message")
+      .setLabel("ACTIVO🟢")
+      .setStyle(ButtonStyle.Primary)
   );
 
   await channel.send({ embeds: [embed], components: [row] });
