@@ -7,7 +7,7 @@ const {
   ButtonStyle,
   StringSelectMenuBuilder,
 } = require("discord.js");
-const { ticketChannelId } = require("../../config/config");
+const ticketChannelId = "727579109739462736";
 const staffRoleId = "1286006325234503750";
 
 const TICKET_TYPES = [
