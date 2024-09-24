@@ -2,7 +2,7 @@ require("dotenv").config();
 
 module.exports = {
   token: process.env.DISCORD_TOKEN,
-  priceChannelId: "1015087640535650387",
+  priceChannelId: "1287926439395721216",
   ticketChannelId: process.env.TICKET_CHANNEL_ID,
   roleChannelId: process.env.ROLE_CHANNEL_ID,
   adminChannelId: process.env.ADMIN_CHANNEL_ID,
