@@ -52,28 +52,28 @@ module.exports = {
       if (channel) {
         const embed = new EmbedBuilder()
           .setColor("#9B59B6")
-          .setTitle("World of Warcraft Retail Gold Prices")
+          .setTitle("World of Warcraft Retail Precio de ORO")
           .setDescription(
-            "Click on the button for your region to see the rate we purchase for."
+            "Haga clic en el botón de su región para ver la tarifa a la que compramos."
           )
-          .addFields({
-            name: "Click here to view payment options:",
-            value: " | payment",
-          })
-          .setThumbnail("https://example.com/dhab_services_logo.png")
-          .setFooter({ text: "Dhab®" });
+          // .addFields({
+          //   name: "Click here to view payment options:",
+          //   value: " | payment",
+          // })
+          .setThumbnail("https://i.imgur.com/x05RAns.png")
+          .setFooter({ text: "BlizzShop®" });
 
         const row = new ActionRowBuilder().addComponents(
           new ButtonBuilder()
             .setCustomId("us_rates")
-            .setLabel("WoW DF Rates US")
+            .setLabel("WoW TWW Precios US")
             .setStyle(ButtonStyle.Success)
-            .setEmoji("🇺🇸"),
-          new ButtonBuilder()
-            .setCustomId("eu_rates")
-            .setLabel("WoW DF Rates EU")
-            .setStyle(ButtonStyle.Primary)
-            .setEmoji("🇪🇺")
+            .setEmoji("🇺🇸")
+          // new ButtonBuilder()
+          //   .setCustomId("eu_rates")
+          //   .setLabel("WoW DF Rates EU")
+          //   .setStyle(ButtonStyle.Primary)
+          //   .setEmoji("🇪🇺")
         );
 
         await channel.send({ embeds: [embed], components: [row] });
