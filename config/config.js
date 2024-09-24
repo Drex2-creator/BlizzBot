@@ -4,7 +4,7 @@ module.exports = {
   token: process.env.DISCORD_TOKEN,
   priceChannelId: "1287926439395721216",
   ticketChannelId: process.env.TICKET_CHANNEL_ID,
-  roleChannelId: process.env.ROLE_CHANNEL_ID,
+  roleChannelId: "1287963198313599030",
   adminChannelId: process.env.ADMIN_CHANNEL_ID,
   orderChannelId: process.env.ORDER_CHANNEL_ID,
   toggleChannelId: process.env.CHANNEL_TO_TOGGLE_ID,
